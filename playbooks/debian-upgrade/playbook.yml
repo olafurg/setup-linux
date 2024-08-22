@@ -1,5 +1,5 @@
 ---
-- name: Upgrade Debian based boxes
+- name: Upgrade Debian based
   hosts: debian
   become: true
   tasks:
@@ -14,13 +14,13 @@
         upgrade: dist
         force_apt_get: true
 
-    - name: Check if a reboot is needed on all servers
+    - name: Check if a reboot is needed
       register: reboot_required_file
       stat: path=/var/run/reboot-required get_md5=no
 
-    - name: Reboot the box if kernel updated
+    - name: Reboot if needed
       reboot:
-        msg: "Reboot initiated by Ansible for kernel updates"
+        msg: "Reboot required, initiating..."
         connect_timeout: 5
         reboot_timeout: 300
         pre_reboot_delay: 0
