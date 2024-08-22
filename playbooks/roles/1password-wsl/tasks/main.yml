@@ -5,7 +5,6 @@
   apt:
     name: socat
     state: present
-    update_cache: yes
 
 - name: Make $HOME/.1password directory
   ansible.builtin.file:

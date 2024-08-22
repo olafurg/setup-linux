@@ -7,7 +7,6 @@
       - software-properties-common
       - wget
     state: present
-    update_cache: true
 
 - name: Create directory for apt keyrings
   file:
