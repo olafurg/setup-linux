@@ -2,16 +2,13 @@
 
 My Ansible config for setting up Linux (Debian) machines.
 
-To set up a new machine, you need to install ansible first.
+To set up a new machine, clone the repository and run the preparation script.
 
-    sudo apt-get update && sudo apt-get upgrade
-    sudo apt-get -y install ansible git curl
-
-Then clone the repository and run a playbook.
+    chmod +x prpeare.sh
+    ./prepare.sh
 
 To run a playbook, for example:
 
     ansible-playbook playbooks/wsl-ubuntu-setup.yml -K
 
 The ```-K``` is to prompt for sudo password.
-
