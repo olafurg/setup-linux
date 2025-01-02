@@ -4,7 +4,7 @@ My Ansible config for setting up Linux (Debian) machines.
 
 To set up a new machine, clone the repository and run the preparation script.
 
-    chmod +x prpeare.sh
+    chmod +x prepare.sh
     ./prepare.sh
 
 To run a playbook, for example:
