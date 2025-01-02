@@ -1,5 +1,5 @@
 ---
-- name: Set up Ubuntu desktop localhost
+- name: Set up Ubuntu/Debian desktop
   hosts: localhost
   connection: local
   tasks:
@@ -17,23 +17,28 @@
           - nmap
           - traceroute
           - tree
-          - ttf-mscorefonts-installer
           - vim
           - whois
         state: present
 
-    - name: Install snap packages
+    - name: Install Snap packages
       become: true
       snap:
         name:
-          - code
-          - signal
+          - signal-desktop
         state: present
 
+    - name: Install Snap packages (classic)
+      become: true
+      snap:
+        name:
+          - code # VS Code
+        state: present
+        classic: true
+
   roles:
-    - 1password-debian-ubuntu-desktop
+    # - 1password-debian-ubuntu-desktop
     - asdf
-    - base-packages-debian
     - gh
     - git
     - oh_my_zsh
